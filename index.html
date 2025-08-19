@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PingConnect</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🔐 PingConnect</h1>
+    <input type="text" id="macInput" placeholder="Enter MAC address" />
+    <button onclick="searchMAC()">Search & Ping</button>
+    <div id="status"></div>
+
+    <div id="chatSection" class="hidden">
+      <textarea id="chatLog" readonly></textarea>
+      <input type="text" id="chatInput" placeholder="Type message..." />
+      <button onclick="sendEncryptedMessage()">Send</button>
+    </div>
+
+    <div id="callSection" class="hidden">
+      <button onclick="startVideoCall()">Start Video Call</button>
+      <button onclick="startVoiceCall()">Start Voice Call</button>
+      <video id="localVideo" autoplay muted></video>
+      <video id="remoteVideo" autoplay></video>
+    </div>
+  </div>
+
+  <script src="crypto.js"></script>
+  <script src="webrtc.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
